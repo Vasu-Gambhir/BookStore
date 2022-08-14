@@ -141,7 +141,7 @@ app.delete("/books/:id", async (req, res) => {
     const {id} = req.params;
     const deletedBook = await Book.findByIdAndDelete(id);
     // console.log(deletedBook);
-    req.flash('success' , 'Sucessfully added a new book!' )
+    req.flash('success' , 'Sucessfully deleted a book!' )
     res.redirect(`/books`);
 });
 
