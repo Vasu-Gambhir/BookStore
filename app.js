@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
 
@@ -13,7 +14,7 @@ const User = require("./models/user");
 const LocalStrategy = require("passport-local");
 const methodOverride = require("method-override"); 
 const MongoStore = require('connect-mongo');
-const mongoURL =  "mongodb+srv://vg44:G2XoxUyr78yQoZsP@cluster0.bgn191f.mongodb.net/?retryWrites=true&w=majority" ||'mongodb://localhost:27017/booksStore'
+const mongoURL =  process.env.mongoURL ||'mongodb://localhost:27017/booksStore'
 mongoose
   .connect(mongoURL,{
     useNewUrlParser: true,
